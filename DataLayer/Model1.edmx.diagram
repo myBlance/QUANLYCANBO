@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="34f56d89bb434abcb5de2fc9932a729b" Name="Diagram1">
+        <EntityTypeShape EntityType="QLCBModel.tb_CAPHAM" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_CHUCDANH" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="QLCBModel.tb_CHUCVU" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="QLCBModel.tb_DANTOC" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_DIEUCHUYEN" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_DONVI" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_KYLUAT" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_KHENTHUONG" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_LENHAM" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_TONGIAO" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_THOIVIEC" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_TRINHDO" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="QLCBModel.tb_CANBO" Width="1.5" PointX="9" PointY="11" />
+        <AssociationConnector Association="QLCBModel.FK_tb_CANBO_tb_CHUCDANH" />
+        <AssociationConnector Association="QLCBModel.FK_tb_CANBO_tb_CHUCVU" />
+        <AssociationConnector Association="QLCBModel.FK_tb_CANBO_tb_DONVI" />
+        <AssociationConnector Association="QLCBModel.FK_tb_CANBO_tb_TRINHDO" />
+        <EntityTypeShape EntityType="QLCBModel.tb_BAOHIEM" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QLCBModel.tb_TAIKHOAN" Width="1.5" PointX="10.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

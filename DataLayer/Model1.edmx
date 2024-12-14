@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QLCBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_BAOHIEM">
+          <Key>
+            <PropertyRef Name="MABH" />
+          </Key>
+          <Property Name="MABH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOBH" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYCAP" Type="datetime" />
+          <Property Name="NGAYHETHAN" Type="datetime" />
+          <Property Name="NOICAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOIKHAMBENH" Type="nvarchar" MaxLength="50" />
+          <Property Name="MACB" Type="int" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_CANBO">
+          <Key>
+            <PropertyRef Name="MACB" />
+          </Key>
+          <Property Name="MACB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOHIEU" Type="nvarchar" MaxLength="50" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="GIOITINH" Type="bit" />
+          <Property Name="NGAYSINH" Type="datetime" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCCD" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="HINHANH" Type="varbinary(max)" />
+          <Property Name="MAPHONG" Type="int" />
+          <Property Name="MACV" Type="int" />
+          <Property Name="MATD" Type="int" />
+          <Property Name="MADT" Type="int" />
+          <Property Name="MABH" Type="int" />
+          <Property Name="MATG" Type="int" />
+          <Property Name="MACD" Type="int" />
+          <Property Name="MACH" Type="int" />
+          <Property Name="DATHOIVIEC" Type="bit" />
+        </EntityType>
+        <EntityType Name="tb_CAPHAM">
+          <Key>
+            <PropertyRef Name="MACH" />
+          </Key>
+          <Property Name="MACH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCAPHAM" Type="nvarchar" MaxLength="50" />
+          <Property Name="HESOLUONG" Type="float" />
+          <Property Name="NAMLEN" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_CHUCDANH">
+          <Key>
+            <PropertyRef Name="MACD" />
+          </Key>
+          <Property Name="MACD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCHUCDANH" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="MACV" />
+          </Key>
+          <Property Name="MACV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCHUCVU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_DANTOC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENDT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_DIEUCHUYEN">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="MACB" Type="int" />
+          <Property Name="MAPHONG" Type="int" />
+          <Property Name="MAPHONG2" Type="int" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_DONVI">
+          <Key>
+            <PropertyRef Name="MAPHONG" />
+          </Key>
+          <Property Name="MAPHONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENPHONG" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_KYLUAT">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="MACB" Type="int" />
+          <Property Name="LOAI" Type="int" />
+          <Property Name="TUNGAY" Type="datetime" />
+          <Property Name="DENNGAY" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_KHENTHUONG">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="MACB" Type="int" />
+          <Property Name="LOAI" Type="int" />
+          <Property Name="TUNGAY" Type="datetime" />
+          <Property Name="DENNGAY" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_LENHAM">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MACB" Type="int" />
+          <Property Name="MACH" Type="int" />
+          <Property Name="MACH2" Type="int" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="NGAYTIEPTHEO" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tb_TAIKHOAN">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="taikhoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="matkhau" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_TONGIAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTG" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_THOIVIEC">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MACB" Type="int" />
+          <Property Name="NGAYNOPDON" Type="datetime" />
+          <Property Name="NGAYNGHI" Type="datetime" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_TRINHDO">
+          <Key>
+            <PropertyRef Name="MATD" />
+          </Key>
+          <Property Name="MATD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTRINHDO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_tb_CANBO_tb_CHUCDANH">
+          <End Role="tb_CHUCDANH" Type="Self.tb_CHUCDANH" Multiplicity="0..1" />
+          <End Role="tb_CANBO" Type="Self.tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCDANH">
+              <PropertyRef Name="MACD" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MACD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CANBO_tb_CHUCVU">
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="0..1" />
+          <End Role="tb_CANBO" Type="Self.tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="MACV" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MACV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CANBO_tb_DONVI">
+          <End Role="tb_DONVI" Type="Self.tb_DONVI" Multiplicity="0..1" />
+          <End Role="tb_CANBO" Type="Self.tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_DONVI">
+              <PropertyRef Name="MAPHONG" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MAPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CANBO_tb_TRINHDO">
+          <End Role="tb_TRINHDO" Type="Self.tb_TRINHDO" Multiplicity="0..1" />
+          <End Role="tb_CANBO" Type="Self.tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_TRINHDO">
+              <PropertyRef Name="MATD" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MATD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLCBModelStoreContainer">
+          <EntitySet Name="tb_BAOHIEM" EntityType="Self.tb_BAOHIEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CANBO" EntityType="Self.tb_CANBO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CAPHAM" EntityType="Self.tb_CAPHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHUCDANH" EntityType="Self.tb_CHUCDANH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHUCVU" EntityType="Self.tb_CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DANTOC" EntityType="Self.tb_DANTOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DIEUCHUYEN" EntityType="Self.tb_DIEUCHUYEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DONVI" EntityType="Self.tb_DONVI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_KYLUAT" EntityType="Self.tb_KYLUAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_KHENTHUONG" EntityType="Self.tb_KHENTHUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LENHAM" EntityType="Self.tb_LENHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TAIKHOAN" EntityType="Self.tb_TAIKHOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TONGIAO" EntityType="Self.tb_TONGIAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_THOIVIEC" EntityType="Self.tb_THOIVIEC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TRINHDO" EntityType="Self.tb_TRINHDO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tb_CANBO_tb_CHUCDANH" Association="Self.FK_tb_CANBO_tb_CHUCDANH">
+            <End Role="tb_CHUCDANH" EntitySet="tb_CHUCDANH" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CANBO_tb_CHUCVU" Association="Self.FK_tb_CANBO_tb_CHUCVU">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CANBO_tb_DONVI" Association="Self.FK_tb_CANBO_tb_DONVI">
+            <End Role="tb_DONVI" EntitySet="tb_DONVI" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CANBO_tb_TRINHDO" Association="Self.FK_tb_CANBO_tb_TRINHDO">
+            <End Role="tb_TRINHDO" EntitySet="tb_TRINHDO" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLCBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QLCBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_CAPHAM" EntityType="QLCBModel.tb_CAPHAM" />
+          <EntitySet Name="tb_CHUCDANH" EntityType="QLCBModel.tb_CHUCDANH" />
+          <EntitySet Name="tb_CHUCVU" EntityType="QLCBModel.tb_CHUCVU" />
+          <EntitySet Name="tb_DANTOC" EntityType="QLCBModel.tb_DANTOC" />
+          <EntitySet Name="tb_DIEUCHUYEN" EntityType="QLCBModel.tb_DIEUCHUYEN" />
+          <EntitySet Name="tb_DONVI" EntityType="QLCBModel.tb_DONVI" />
+          <EntitySet Name="tb_KYLUAT" EntityType="QLCBModel.tb_KYLUAT" />
+          <EntitySet Name="tb_KHENTHUONG" EntityType="QLCBModel.tb_KHENTHUONG" />
+          <EntitySet Name="tb_LENHAM" EntityType="QLCBModel.tb_LENHAM" />
+          <EntitySet Name="tb_TONGIAO" EntityType="QLCBModel.tb_TONGIAO" />
+          <EntitySet Name="tb_THOIVIEC" EntityType="QLCBModel.tb_THOIVIEC" />
+          <EntitySet Name="tb_TRINHDO" EntityType="QLCBModel.tb_TRINHDO" />
+          <EntitySet Name="tb_CANBO" EntityType="QLCBModel.tb_CANBO" />
+          <AssociationSet Name="FK_tb_CANBO_tb_CHUCDANH" Association="QLCBModel.FK_tb_CANBO_tb_CHUCDANH">
+            <End Role="tb_CHUCDANH" EntitySet="tb_CHUCDANH" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CANBO_tb_CHUCVU" Association="QLCBModel.FK_tb_CANBO_tb_CHUCVU">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CANBO_tb_DONVI" Association="QLCBModel.FK_tb_CANBO_tb_DONVI">
+            <End Role="tb_DONVI" EntitySet="tb_DONVI" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CANBO_tb_TRINHDO" Association="QLCBModel.FK_tb_CANBO_tb_TRINHDO">
+            <End Role="tb_TRINHDO" EntitySet="tb_TRINHDO" />
+            <End Role="tb_CANBO" EntitySet="tb_CANBO" />
+          </AssociationSet>
+          <EntitySet Name="tb_BAOHIEM" EntityType="QLCBModel.tb_BAOHIEM" />
+          <EntitySet Name="tb_TAIKHOAN" EntityType="QLCBModel.tb_TAIKHOAN" />
+        </EntityContainer>
+        <EntityType Name="tb_CAPHAM">
+          <Key>
+            <PropertyRef Name="MACH" />
+          </Key>
+          <Property Name="MACH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCAPHAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HESOLUONG" Type="Double" />
+          <Property Name="NAMLEN" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tb_CHUCDANH">
+          <Key>
+            <PropertyRef Name="MACD" />
+          </Key>
+          <Property Name="MACD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCHUCDANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_CANBO" Relationship="QLCBModel.FK_tb_CANBO_tb_CHUCDANH" FromRole="tb_CHUCDANH" ToRole="tb_CANBO" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="MACV" />
+          </Key>
+          <Property Name="MACV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCHUCVU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_CANBO" Relationship="QLCBModel.FK_tb_CANBO_tb_CHUCVU" FromRole="tb_CHUCVU" ToRole="tb_CANBO" />
+        </EntityType>
+        <EntityType Name="tb_DANTOC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_DIEUCHUYEN">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="MACB" Type="Int32" />
+          <Property Name="MAPHONG" Type="Int32" />
+          <Property Name="MAPHONG2" Type="Int32" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_DONVI">
+          <Key>
+            <PropertyRef Name="MAPHONG" />
+          </Key>
+          <Property Name="MAPHONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENPHONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_CANBO" Relationship="QLCBModel.FK_tb_CANBO_tb_DONVI" FromRole="tb_DONVI" ToRole="tb_CANBO" />
+        </EntityType>
+        <EntityType Name="tb_KYLUAT">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="MACB" Type="Int32" />
+          <Property Name="LOAI" Type="Int32" />
+          <Property Name="TUNGAY" Type="DateTime" Precision="3" />
+          <Property Name="DENNGAY" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_KHENTHUONG">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="MACB" Type="Int32" />
+          <Property Name="LOAI" Type="Int32" />
+          <Property Name="TUNGAY" Type="DateTime" Precision="3" />
+          <Property Name="DENNGAY" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_LENHAM">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACB" Type="Int32" />
+          <Property Name="MACH" Type="Int32" />
+          <Property Name="MACH2" Type="Int32" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="NGAYTIEPTHEO" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_TONGIAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_THOIVIEC">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACB" Type="Int32" />
+          <Property Name="NGAYNOPDON" Type="DateTime" Precision="3" />
+          <Property Name="NGAYNGHI" Type="DateTime" Precision="3" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_TRINHDO">
+          <Key>
+            <PropertyRef Name="MATD" />
+          </Key>
+          <Property Name="MATD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTRINHDO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_CANBO" Relationship="QLCBModel.FK_tb_CANBO_tb_TRINHDO" FromRole="tb_TRINHDO" ToRole="tb_CANBO" />
+        </EntityType>
+        <EntityType Name="tb_CANBO">
+          <Key>
+            <PropertyRef Name="MACB" />
+          </Key>
+          <Property Name="MACB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIOITINH" Type="Boolean" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCCD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="MAPHONG" Type="Int32" />
+          <Property Name="MACV" Type="Int32" />
+          <Property Name="MATD" Type="Int32" />
+          <Property Name="MADT" Type="Int32" />
+          <Property Name="MABH" Type="Int32" />
+          <Property Name="MATG" Type="Int32" />
+          <Property Name="MACD" Type="Int32" />
+          <Property Name="MACH" Type="Int32" />
+          <Property Name="DATHOIVIEC" Type="Boolean" />
+          <NavigationProperty Name="tb_CHUCDANH" Relationship="QLCBModel.FK_tb_CANBO_tb_CHUCDANH" FromRole="tb_CANBO" ToRole="tb_CHUCDANH" />
+          <NavigationProperty Name="tb_CHUCVU" Relationship="QLCBModel.FK_tb_CANBO_tb_CHUCVU" FromRole="tb_CANBO" ToRole="tb_CHUCVU" />
+          <NavigationProperty Name="tb_DONVI" Relationship="QLCBModel.FK_tb_CANBO_tb_DONVI" FromRole="tb_CANBO" ToRole="tb_DONVI" />
+          <NavigationProperty Name="tb_TRINHDO" Relationship="QLCBModel.FK_tb_CANBO_tb_TRINHDO" FromRole="tb_CANBO" ToRole="tb_TRINHDO" />
+        </EntityType>
+        <Association Name="FK_tb_CANBO_tb_CHUCDANH">
+          <End Type="QLCBModel.tb_CHUCDANH" Role="tb_CHUCDANH" Multiplicity="0..1" />
+          <End Type="QLCBModel.tb_CANBO" Role="tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCDANH">
+              <PropertyRef Name="MACD" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MACD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CANBO_tb_CHUCVU">
+          <End Type="QLCBModel.tb_CHUCVU" Role="tb_CHUCVU" Multiplicity="0..1" />
+          <End Type="QLCBModel.tb_CANBO" Role="tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="MACV" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MACV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CANBO_tb_DONVI">
+          <End Type="QLCBModel.tb_DONVI" Role="tb_DONVI" Multiplicity="0..1" />
+          <End Type="QLCBModel.tb_CANBO" Role="tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_DONVI">
+              <PropertyRef Name="MAPHONG" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MAPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CANBO_tb_TRINHDO">
+          <End Type="QLCBModel.tb_TRINHDO" Role="tb_TRINHDO" Multiplicity="0..1" />
+          <End Type="QLCBModel.tb_CANBO" Role="tb_CANBO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_TRINHDO">
+              <PropertyRef Name="MATD" />
+            </Principal>
+            <Dependent Role="tb_CANBO">
+              <PropertyRef Name="MATD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_BAOHIEM">
+          <Key>
+            <PropertyRef Name="MABH" />
+          </Key>
+          <Property Name="MABH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYCAP" Type="DateTime" Precision="3" />
+          <Property Name="NGAYHETHAN" Type="DateTime" Precision="3" />
+          <Property Name="NOICAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOIKHAMBENH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACB" Type="Int32" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_TAIKHOAN">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="matkhau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLCBModelStoreContainer" CdmEntityContainer="QLCBEntities">
+          <EntitySetMapping Name="tb_CAPHAM">
+            <EntityTypeMapping TypeName="QLCBModel.tb_CAPHAM">
+              <MappingFragment StoreEntitySet="tb_CAPHAM">
+                <ScalarProperty Name="NAMLEN" ColumnName="NAMLEN" />
+                <ScalarProperty Name="HESOLUONG" ColumnName="HESOLUONG" />
+                <ScalarProperty Name="TENCAPHAM" ColumnName="TENCAPHAM" />
+                <ScalarProperty Name="MACH" ColumnName="MACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHUCDANH">
+            <EntityTypeMapping TypeName="QLCBModel.tb_CHUCDANH">
+              <MappingFragment StoreEntitySet="tb_CHUCDANH">
+                <ScalarProperty Name="TENCHUCDANH" ColumnName="TENCHUCDANH" />
+                <ScalarProperty Name="MACD" ColumnName="MACD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHUCVU">
+            <EntityTypeMapping TypeName="QLCBModel.tb_CHUCVU">
+              <MappingFragment StoreEntitySet="tb_CHUCVU">
+                <ScalarProperty Name="TENCHUCVU" ColumnName="TENCHUCVU" />
+                <ScalarProperty Name="MACV" ColumnName="MACV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DANTOC">
+            <EntityTypeMapping TypeName="QLCBModel.tb_DANTOC">
+              <MappingFragment StoreEntitySet="tb_DANTOC">
+                <ScalarProperty Name="TENDT" ColumnName="TENDT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DIEUCHUYEN">
+            <EntityTypeMapping TypeName="QLCBModel.tb_DIEUCHUYEN">
+              <MappingFragment StoreEntitySet="tb_DIEUCHUYEN">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="MAPHONG2" ColumnName="MAPHONG2" />
+                <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DONVI">
+            <EntityTypeMapping TypeName="QLCBModel.tb_DONVI">
+              <MappingFragment StoreEntitySet="tb_DONVI">
+                <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
+                <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_KYLUAT">
+            <EntityTypeMapping TypeName="QLCBModel.tb_KYLUAT">
+              <MappingFragment StoreEntitySet="tb_KYLUAT">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DENNGAY" ColumnName="DENNGAY" />
+                <ScalarProperty Name="TUNGAY" ColumnName="TUNGAY" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_KHENTHUONG">
+            <EntityTypeMapping TypeName="QLCBModel.tb_KHENTHUONG">
+              <MappingFragment StoreEntitySet="tb_KHENTHUONG">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DENNGAY" ColumnName="DENNGAY" />
+                <ScalarProperty Name="TUNGAY" ColumnName="TUNGAY" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LENHAM">
+            <EntityTypeMapping TypeName="QLCBModel.tb_LENHAM">
+              <MappingFragment StoreEntitySet="tb_LENHAM">
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="NGAYTIEPTHEO" ColumnName="NGAYTIEPTHEO" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="MACH2" ColumnName="MACH2" />
+                <ScalarProperty Name="MACH" ColumnName="MACH" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TONGIAO">
+            <EntityTypeMapping TypeName="QLCBModel.tb_TONGIAO">
+              <MappingFragment StoreEntitySet="tb_TONGIAO">
+                <ScalarProperty Name="TENTG" ColumnName="TENTG" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_THOIVIEC">
+            <EntityTypeMapping TypeName="QLCBModel.tb_THOIVIEC">
+              <MappingFragment StoreEntitySet="tb_THOIVIEC">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="NGAYNGHI" ColumnName="NGAYNGHI" />
+                <ScalarProperty Name="NGAYNOPDON" ColumnName="NGAYNOPDON" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TRINHDO">
+            <EntityTypeMapping TypeName="QLCBModel.tb_TRINHDO">
+              <MappingFragment StoreEntitySet="tb_TRINHDO">
+                <ScalarProperty Name="TENTRINHDO" ColumnName="TENTRINHDO" />
+                <ScalarProperty Name="MATD" ColumnName="MATD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CANBO">
+            <EntityTypeMapping TypeName="QLCBModel.tb_CANBO">
+              <MappingFragment StoreEntitySet="tb_CANBO">
+                <ScalarProperty Name="DATHOIVIEC" ColumnName="DATHOIVIEC" />
+                <ScalarProperty Name="MACH" ColumnName="MACH" />
+                <ScalarProperty Name="MACD" ColumnName="MACD" />
+                <ScalarProperty Name="MATG" ColumnName="MATG" />
+                <ScalarProperty Name="MABH" ColumnName="MABH" />
+                <ScalarProperty Name="MADT" ColumnName="MADT" />
+                <ScalarProperty Name="MATD" ColumnName="MATD" />
+                <ScalarProperty Name="MACV" ColumnName="MACV" />
+                <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="SOHIEU" ColumnName="SOHIEU" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_BAOHIEM">
+            <EntityTypeMapping TypeName="QLCBModel.tb_BAOHIEM">
+              <MappingFragment StoreEntitySet="tb_BAOHIEM">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="MACB" ColumnName="MACB" />
+                <ScalarProperty Name="NOIKHAMBENH" ColumnName="NOIKHAMBENH" />
+                <ScalarProperty Name="NOICAP" ColumnName="NOICAP" />
+                <ScalarProperty Name="NGAYHETHAN" ColumnName="NGAYHETHAN" />
+                <ScalarProperty Name="NGAYCAP" ColumnName="NGAYCAP" />
+                <ScalarProperty Name="SOBH" ColumnName="SOBH" />
+                <ScalarProperty Name="MABH" ColumnName="MABH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TAIKHOAN">
+            <EntityTypeMapping TypeName="QLCBModel.tb_TAIKHOAN">
+              <MappingFragment StoreEntitySet="tb_TAIKHOAN">
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
